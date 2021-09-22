@@ -1,6 +1,7 @@
 import config from '../config';
 import Sequelize from 'sequelize';
 import { logger } from '../utils/logger';
+import ComputerGroupsModel from 'models/computer_groups.model';
 
 const { host, user, password, database, pool } = config.dbConfig;
 const sequelize = new Sequelize.Sequelize(database, user, password, {
@@ -20,6 +21,7 @@ const sequelize = new Sequelize.Sequelize(database, user, password, {
 sequelize.authenticate();
 
 const DB = {
+  ComputerGroups: ComputerGroupsModel(sequelize),
   sequelize, // connection instance (RAW queries)
   Sequelize, // library
 };

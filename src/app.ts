@@ -2,7 +2,7 @@ import express from 'express';
 import helmet from 'helmet';
 import hpp from 'hpp';
 import morgan from 'morgan';
-import DB from './databases/config';
+import DB from './databases/index';
 import { Routes } from './index';
 import { logger, stream } from './utils/logger';
 import config from './config';
